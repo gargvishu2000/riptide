@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import SearchBar from './components/SearchBar'
 import About from './pages/About'
 import Cart from './pages/Cart'
 import Collection from './pages/Collection'
@@ -11,12 +12,16 @@ import Login from './pages/Login'
 import Orders from './pages/Orders'
 import PlaceOrder from './pages/PlaceOrder'
 import Product from './pages/Product'
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       {/* Navbar will be shown in all the pages because we have mounted it before Routes */}
+      {/* Toast Container for notifications */}
+      <ToastContainer /> 
       <Navbar />
+      <SearchBar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/collection' element={<Collection />} />
