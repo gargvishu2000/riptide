@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { products } from "../assets/assets";
  
@@ -15,14 +16,14 @@ const shopContextProvider=(props)=>{
      const [showSearch,setShowSearch] = useState(false);
      const[cartItem,setCartItem]= useState({})
 
+     const navigate =useNavigate()
+
      const addToCart = async (itemId,size)=>{
         let cartData = structuredClone(cartItem);
-
         if(!size){
             toast.error("Please Select Size");
             return;
         }
-
         if(cartData[itemId]){
             if(cartData[itemId][size]){
                 cartData[itemId][size]+=1;
@@ -40,8 +41,6 @@ const shopContextProvider=(props)=>{
         let totalCount=0;
         for(const items in cartItem){
             for(const item in cartItem[items]){
-                console.log(cartItem[items][item]);
-                console.log(item);
                 if(cartItem[items][item]>0){
                     totalCount+= cartItem[items][item];
                 }else{
@@ -52,13 +51,34 @@ const shopContextProvider=(props)=>{
         return totalCount;
     }
 
+    const updateQuantity = async(itemId,size,quantity)=>{
+        let cartData = structuredClone(cartItem);
+        cartData[itemId][size]=quantity;
+        setCartItem(cartData);
+    }
+
+    const getCartAmount = ()=> {
+        let totalAmount=0;
+        for(const items in cartItem){
+            let itemInfo = products.find((product)=> product._id===items);
+            for(const item in cartItem[items]){
+                if(cartItem[items][item]>0){
+                    totalAmount += itemInfo.price * cartItem[items][item];
+                }
+            }
+        }
+        return totalAmount;
+    }
+
     // Whenever we will add any varieable, state varieable, function within this value object 
     // we can access it in any component using the context API. 
     const value ={
         products, currency, delivery_fee,
         search,setSearch,showSearch,setShowSearch,
-        addToCart,cartItem,getCartCount
+        addToCart,cartItem,getCartCount,updateQuantity,
+        getCartAmount, navigate
     }
+
 
     return (
         <ShopContext.Provider value={value}>

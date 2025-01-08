@@ -19,7 +19,7 @@ const Product = () => {
     if (product) {
       setProductData(product); // Store the product object
       setImage(product.image[0]);
-      console.log(product);
+      
     }
   }
 
