@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import axios from 'axios'
+import { products } from "../assets/frontend_assets/assets";
 
 // Doing this to avoid prop drilling.
 export const ShopContext = createContext();
