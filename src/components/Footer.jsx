@@ -22,14 +22,14 @@ const Footer = () => {
         <div>
             <p className='text-xl font-medium mb-5'>Get In Touch</p>
             <ul className='flex flex-col gap-1 text-gray-500'>
-                <li>+1-234-567-89</li>
-                <li>company@gmail.com</li>
+                <li>+91 9999237843</li>
+                <li>customercare@riptide.com</li>
             </ul>
         </div>
       </div>
       <div>
             <hr />
-            <p className='text-center py-4 text-sm'>Copyright 2023@ forever.com -All Right Reserved</p>
+            <p className='text-center py-4 text-sm'>Copyright 2024@ riptide.com -All Right Reserved</p>
         </div>
     </div>
   )
