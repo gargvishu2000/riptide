@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {products} from '../assets/assets.js'
+import {assets} from '../assets/assets.js';
+import ScrollToTop from '../ScrollToTop.jsx';
+import { Link } from 'react-router-dom';
 
 const Product = () => {
   const {productId} = useParams();
@@ -58,7 +61,7 @@ const Product = () => {
             <img src={assets.star_dull_icon} alt="" className="w-3.5" />
             <p className='pl-3'>(122)</p>
           </div>
-          <p className='mt-3 text-3xl font-medium'>${productData.price}</p>
+          <p className='mt-3 text-3xl font-medium'>&#8377;  {productData.price}</p>
           <p className='mt-3 text-gray-400 md:w-4/5'>{productData.description}</p>
           
           <div className='flex flex-col gap-4 my-8'>
@@ -104,11 +107,20 @@ const Product = () => {
             )
             .slice(0, 4)
             .map(item => (
-              <div key={item._id} className="cursor-pointer">
-                <img src={item.image[0]} alt={item.name} className="w-full h-64 object-cover"/>
-                <h3 className="mt-2 font-medium">{item.name}</h3>
-                <p className="text-gray-600">${item.price}</p>
-              </div>
+              <Link 
+                to={`/product/${item._id}`} 
+                key={item._id} 
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  fetchProductData();
+                }}
+              >
+                <div className="cursor-pointer">
+                  <img src={item.image[0]} alt={item.name} className="w-full h-64 object-cover"/>
+                  <h3 className="mt-2 font-medium">{item.name}</h3>
+                  <p className="text-gray-600">₹ {item.price}</p>
+                </div>
+              </Link>
             ))}
         </div>
       </div>

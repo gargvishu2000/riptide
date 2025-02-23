@@ -8,6 +8,8 @@ import Collection from './pages/Collection'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
 import { ToastContainer, toast } from 'react-toastify';
+import Product from './pages/Product'
+import ScrollToTop from './ScrollToTop'
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/collection' element={<Collection />} />
+        <Route path='/product/:productId' element={<Product />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>

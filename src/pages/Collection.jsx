@@ -2,11 +2,11 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
-import { createContext } from 'react'
 import { assets } from '../assets/assets';
 import ProductItem from '../components/ProductItem';
 import Title from '../components/Title';
 import { ShopContext } from '../context/ShopContext';
+import ScrollToTop from '../ScrollToTop';
 
 const Collection = () => {
   const {products,search,showSearch} = useContext(ShopContext);
