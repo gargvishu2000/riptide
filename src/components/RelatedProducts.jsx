@@ -22,18 +22,22 @@ const RelatedProducts = ({ category, subCategory }) => {
                 <Title text1="RELATED" text2="PRODUCTS" />
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
-                {related.map((item, index) => ( 
-                    <Link 
+                {related.map((item, index) => (
+                    <Link
                         to={`/product/${item.productId}`}
                         key={index}
-                        onClick={() => window.scrollTo(0, 0)}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            setTimeout(() => { window.location.href = `/product/${item.productId}`; }, 100);
+                        }}
                         className="block"
                     >
                         <div className="cursor-pointer text-center">
-                            <img 
-                                src={item.image[0]} 
-                                alt={item.name} 
-                                className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg"
+                            <img
+                                src={item.image[0]}
+                                alt={item.name}
+                                className=" object-cover"
                             />
                             <h3 className="mt-2 font-medium text-sm sm:text-base">{item.name}</h3>
                             <p className="text-gray-600 text-sm sm:text-base">₹ {item.price}</p>

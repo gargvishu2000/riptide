@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {products} from '../assets/assets.js'
 import {assets} from '../assets/assets.js';
-import ScrollToTop from '../ScrollToTop.jsx';
-import { Link } from 'react-router-dom';
 
 const Product = () => {
   const {productId} = useParams();
@@ -101,7 +99,7 @@ const Product = () => {
       </div> */}
 
       {/* Related Products */}
-      <div className="mt-16">
+      {/* <div className="mt-16">
         <h2 className="text-2xl font-medium mb-8">Related Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products
@@ -127,7 +125,7 @@ const Product = () => {
               </Link>
             ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
