@@ -33,7 +33,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="w-full max-w-screen-xl mx-auto border border-gray-400">
+    <div className="w-full border border-gray-400">
       <Carousel
         responsive={responsive}
         infinite={true}
@@ -43,7 +43,7 @@ const Hero = () => {
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >
         {heroData.map((slide, index) => (
-          <div key={index} className="flex flex-col sm:flex-row items-center justify-center h-[400px]">
+          <div key={index} className="flex flex-col sm:flex-row items-center justify-center h-auto sm:h-[400px] p-4">
             {/* Hero Left Side */}
             <div className="sm:w-1/2 flex items-center justify-center h-full">
               <div className="text-[#414141] px-4">
@@ -64,7 +64,7 @@ const Hero = () => {
             <div className="sm:w-1/2 h-full flex items-center justify-center">
               <img
                 src={slide.image}
-                className="w-full h-full object-cover"
+                className="w-full max-h-[300px] sm:max-h-full object-contain"
                 alt={`${slide.title} - ${slide.subtitle}`}
               />
             </div>

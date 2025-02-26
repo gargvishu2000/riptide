@@ -20,9 +20,7 @@ const Product = () => {
 
   useEffect(() => {
     fetchProductData();
-    console.log(products);
-    
-  }, []);
+  }, [productId]);
 
   if (!productData) {
     return <div className='flex justify-center items-center h-screen'>Loading...</div>;
@@ -80,12 +78,18 @@ const Product = () => {
             <p>100% original product</p>
             <p>COD available</p>
             <p>Easy return & exchange policy in 7 days.</p>
+            <a target='/blank' href="https://www.amazon.in/s?k=riptide+tshirt&crid=1GHGC5COKSCER&sprefix=riptide+tshir%2Caps%2C222&ref=nb_sb_noss">
+              <button className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition-colors">Buy On Amazon</button>
+            </a>
+            <a target='/blank' href='https://www.flipkart.com/search?q=riptide%20tshirts&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off'>
+            <button className="border border-black px-6 py-2 rounded hover:bg-gray-100 transition-colors">Buy On Flipkart</button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Description & Review section */}
-      <div className='mt-3'>
+      {/* <div className='mt-3'>
         <div className='flex'>
           <b className='border px-5 py-3 text-sm'>Description</b>
           <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
@@ -94,7 +98,7 @@ const Product = () => {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, non?</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa animi possimus necessitatibus, veniam laudantium quidem inventore delectus earum distinctio? Velit?</p>
         </div>
-      </div>
+      </div> */}
 
       {/* Related Products */}
       <div className="mt-16">

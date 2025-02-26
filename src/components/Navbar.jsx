@@ -12,7 +12,7 @@ const Navbar = () => {
     const { setShowSearch } = useContext(ShopContext);
 
     return (
-        <div className='flex items-center justify-between py-5 font-medium'>
+        <div className='flex items-center justify-between font-medium'>
             <Link to='/' className='w-48 overflow-hidden'>
                 <img
                     src={assets.logo}
@@ -64,10 +64,10 @@ const Navbar = () => {
                     <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/collection'>
                         Collection
                     </NavLink>
-                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/about'>
+                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/About'>
                         About
                     </NavLink>
-                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/contact'>
+                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/Contact'>
                         Contact
                     </NavLink>
                 </div>
