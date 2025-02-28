@@ -9,7 +9,10 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import { ToastContainer, toast } from 'react-toastify';
 import Product from './pages/Product'
-import ScrollToTop from './ScrollToTop'
+import Admin from './pages/Admin'
+
+
+
 
 const App = () => {
   return (
@@ -25,6 +28,7 @@ const App = () => {
         <Route path='/product/:productId' element={<Product />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/admin/*' element={<Admin /> } />
       </Routes>
       <Footer />
     </div>

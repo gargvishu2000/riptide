@@ -39,6 +39,9 @@ const Navbar = () => {
                 </NavLink>
             </ul>
 
+            <Link to="/admin" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                Admin Login
+            </Link>
             <div className='flex items-center gap-6'>
                 <img src={assets.search_icon} onClick={() => setShowSearch(true)} className='w-4 cursor-pointer' alt="" />
 
