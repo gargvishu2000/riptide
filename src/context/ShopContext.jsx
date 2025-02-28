@@ -17,7 +17,7 @@ const ShopContextProvider = (props) => {
     const [refresh, setRefresh] =useState(false);
 
     const navigate = useNavigate();
-    const backendUrl = "http://localhost:3005";
+    const backendUrl = "https://riptide-backend.onrender.com";
 
     const getProductData = async () => {
         if(!token) return ;

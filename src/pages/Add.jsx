@@ -6,7 +6,7 @@ import { ShopContext } from '../context/ShopContext';
 
 const Add = ({ token }) => {
 
-    const backendURl = "http://localhost:3005"
+    const backendURl = "https://riptide-backend.onrender.com"
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);

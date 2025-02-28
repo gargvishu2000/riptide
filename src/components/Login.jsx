@@ -3,7 +3,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 
 const Login = ({setToken}) => {
-    const backendURl = "http://localhost:3005"
+    const backendURl = "https://riptide-backend.onrender.com"
 
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');

@@ -6,7 +6,6 @@ import { assets } from '../assets/assets';
 import ProductItem from '../components/ProductItem';
 import Title from '../components/Title';
 import { ShopContext } from '../context/ShopContext';
-import ScrollToTop from '../ScrollToTop';
 
 const Collection = () => {
   const {products,search,showSearch} = useContext(ShopContext);
@@ -93,9 +92,6 @@ const Collection = () => {
             <p className='flex gap-2'>
               <input type="checkbox" className='w-3' value={'Women'} onChange={toggleCateogory}/>WOMEN
             </p>
-            <p className='flex gap-2'>
-              <input type="checkbox" className='w-3' value={'Kids'} onChange={toggleCateogory}/>KIDS
-            </p>
           </div>
         </div>
         {/* sub categoryfilter */}
@@ -107,9 +103,6 @@ const Collection = () => {
             </p>
             <p className='flex gap-2'>
               <input type="checkbox" className='w-3' value={'Bottomwear'} onChange={toggleSubCateogory}/>Bottomwear
-            </p>
-            <p className='flex gap-2'>
-              <input type="checkbox" className='w-3' value={'Winterwear'} onChange={toggleSubCateogory}/>Winterwear
             </p>
           </div>
         </div>

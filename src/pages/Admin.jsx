@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import Add from './Add'
 import List from './List'
 
-export const backendURl = "http://localhost:3005";
+export const backendURl = "https://riptide-backend.onrender.com";
 export const currency= "$";
 
 const Admin = () => {

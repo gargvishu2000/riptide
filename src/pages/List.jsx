@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 
 const List = ({ token }) => {
-    const backendURl = "http://localhost:3005"
+    const backendURl = "https://riptide-backend.onrender.com"
     const currency = "₹"
 
   const [list, setList] = useState([]);
